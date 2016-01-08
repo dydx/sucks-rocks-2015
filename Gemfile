@@ -37,7 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'cucumber-rails'
-  gem 'database-cleaner'
+  gem 'database_cleaner'
   gem 'vcr'
   gem 'webmock'
 
