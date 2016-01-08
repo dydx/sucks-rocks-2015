@@ -3,6 +3,8 @@ When(/^I search for (.*)$/) do |term|
   @scores[term] = RockScore.for_term(term)
 end
 
-Then(/^apple should have a higher score than microsoft$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^microsoft should have a higher score than apple$/) do
+  apple = @scores["apple"]
+  microsoft = @scores["microsoft"]
+  expect(microsoft).to be > apple
 end
