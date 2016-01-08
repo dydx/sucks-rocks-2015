@@ -1,8 +1,8 @@
 require_relative '../../app/services/score_cache'
 require_relative '../../app/services/rock_score'
 
-# this isn't a service, and I don't feel like invoking
-# rails to get the activerecord model going
+# this is actually an activerecord model that I dont feel
+# like writing just yet
 class CachedScore
   class NoScore < RuntimeError; end
 
@@ -14,6 +14,7 @@ class CachedScore
 end
 
 describe ScoreCache do
+
   it "returns cached scores if they exist" do
     allow(CachedScore).to receive(:for_term).with("microsoft").and_return ( 5.5 )
     expect(ScoreCache.for_term("microsoft")).to eql 5.5
